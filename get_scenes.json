@@ -1,0 +1,6 @@
+{
+    "CommuniqueType": "ReadRequest",
+    "Header": {
+        "Url": "/virtualbutton"
+    }
+}

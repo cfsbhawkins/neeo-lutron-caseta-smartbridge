@@ -1,0 +1,17 @@
+{
+    "CommuniqueType": "CreateRequest",
+    "Header": {
+        "Url": "/zone/%s/commandprocessor"
+    },
+    "Body": {
+        "Command": {
+            "CommandType": "GoToLevel",
+            "Parameter": [
+                {
+                    "Type": "Level",
+                    "Value":0
+                }
+            ]
+        }
+    }
+}

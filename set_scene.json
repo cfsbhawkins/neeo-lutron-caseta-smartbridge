@@ -1,0 +1,11 @@
+{
+    "CommuniqueType": "CreateRequest",
+    "Header": {
+        "Url": "/virtualbutton/%s/commandprocessor"
+    },
+    "Body": {
+        "Command": {
+            "CommandType": "PressAndRelease"
+        }
+    }
+}

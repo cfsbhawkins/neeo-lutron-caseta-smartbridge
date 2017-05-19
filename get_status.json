@@ -1,0 +1,6 @@
+{
+    "CommuniqueType": "ReadRequest",
+    "Header": {
+        "Url": "/zone/%s/status"
+    }
+}
