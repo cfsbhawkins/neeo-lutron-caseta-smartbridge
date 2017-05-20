@@ -29,7 +29,7 @@ module.exports.sliderGet = function (deviceid) {
  * Add all scene and device hooks here, they will be used for the devices that are used in discovery
  */
 function sharedDeviceDiscovery() {
-  return lutron.getScenesAndDevices();
+  return BluePromise.resolve(lutron.getScenesAndDevices());
 }
 
 module.exports.discoverScenes = function () {

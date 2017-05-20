@@ -66,15 +66,15 @@ module.exports.sshConnect = function () {
 };
 
 module.exports.getScenesAndDevices = function () {
-  return [
-    {
-      id: 1,
-      name: 'Bright',
-      type: 'device'
-    }
-  ];
-  //executeCommand(JSON.stringify(getDeviceJson));
-  //executeCommand(JSON.stringify(getSceneJson));
+  return Promise.resolve()
+    .then(function () {
+      devicesAndScenes = [];
+      executeCommand(JSON.stringify(getDeviceJson));
+      executeCommand(JSON.stringify(getSceneJson));
+    }).then(() => sleep(2000))
+    .then(function () {
+      return devicesAndScenes;
+    });
 };
 
 module.exports.setSwitch = function (deviceid, value) {
@@ -112,6 +112,11 @@ module.exports.getDimmerValue = function (deviceid) {
   executeCommand(JSON.stringify(cloned));
 };
 
+function sleep(time) {
+  return new Promise(resolve => {
+    setTimeout(resolve, time)
+  })
+}
 
 function resolveDevicesAndScenes() {
   return new Promise((resolve, reject) => {
@@ -134,7 +139,7 @@ function executeCommand(command) {
 
 
 function parseSSHData(data) {
- // console.log('[Lutron] Receive Command: ' + data);
+  // console.log('[Lutron] Receive Command: ' + data);
   let json = JSON.parse(data.toString('utf8'));
   if (json.CommuniqueType == 'ReadResponse') {
     if (json.Header.StatusCode == '200 OK') {

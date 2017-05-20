@@ -10,3 +10,5 @@ NPM Dependencies
 
 Credit for SSH info and JSON goes to the following project:
 https://github.com/njschwartz/Lutron-Smart-Pi
+
+Looking for help on Lamp Dimmer, I do not own one so not sure what it shows up as in the devices call.
