@@ -21,8 +21,7 @@ module.exports.sliderSet = function (deviceid, value) {
 };
 
 module.exports.sliderGet = function (deviceid) {
-  lutron.getDimmerValue(deviceid);
-  return 0;
+  return BluePromise.resolve(lutron.getDimmerValue(deviceid));
 };
 
 /**

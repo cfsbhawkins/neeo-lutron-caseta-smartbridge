@@ -2,35 +2,34 @@
 
 const util = require('util');
 const SSHClient = require('ssh2').Client;
-const SSH_USER = 'leap';
 const BluePromise = require('bluebird');
 const split = require('split');
 
+//app constants
+const SSH_USER = 'leap';
 const OFF = 0;
 const ON = 100;
 
 //todo autodisover, for now enter the ip of your SmartBridge or SmartBridge Pro
 let SMARTBRIDGE_IP = '10.0.1.102'
+
+//JSON command files
+const getDeviceJson = require('./json/get_devices.json');
+const getSceneJson = require('./json/get_scenes.json');
+const getDeviceStatusJson = require('./json/get_status.json');
+const setDeviceJson = require('./json/set_device.json');
+const setSceneJson = require('./json/set_scene.json');
+
+
 let sshConnected = false;
 let shell;
 let sendComponentUpdate;
-
-//JSON command files
-let getDeviceJson = require('./get_devices.json');
-let getSceneJson = require('./get_scenes.json');
-
-//these need values adjusted
-let getDeviceStatusJson = require('./get_status.json');
-let setDeviceJson = require('./set_device.json');
-let setSceneJson = require('./set_scene.json');
-
-//devices and scenes
 let devicesAndScenes = [];
-
-//command queue
 let sshCommands = [];
 let commandExecuting = false;
-
+/*
+* SSH Connection, this is called after neeo brain has been connected
+*/
 module.exports.sshConnect = function () {
   console.log('[Lutron] Start SSH Client');
   let sshConn = new SSHClient();
@@ -61,10 +60,13 @@ module.exports.sshConnect = function () {
       host: SMARTBRIDGE_IP,
       port: 22,
       username: SSH_USER,
-      privateKey: require('fs').readFileSync('./rsa_key')
+      privateKey: require('fs').readFileSync('./smartbridge/key/rsa_key')
     });
 };
 
+/*
+* Action callbacks for Neeo Events from Scenes or Devices
+*/
 module.exports.getScenesAndDevices = function () {
   return Promise.resolve()
     .then(function () {
@@ -112,19 +114,14 @@ module.exports.getDimmerValue = function (deviceid) {
   executeCommand(JSON.stringify(cloned));
 };
 
+/*
+* Helper Functions
+*/
+
 function sleep(time) {
   return new Promise(resolve => {
     setTimeout(resolve, time)
   })
-}
-
-function resolveDevicesAndScenes() {
-  return new Promise((resolve, reject) => {
-    setTimeout(function () {
-
-      return resolve(devicesAndScenes);
-    }, 4000);
-  });
 }
 
 function executeCommand(command) {
@@ -136,7 +133,6 @@ function executeCommand(command) {
     }
   }
 }
-
 
 function parseSSHData(data) {
   // console.log('[Lutron] Receive Command: ' + data);

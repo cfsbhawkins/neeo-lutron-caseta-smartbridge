@@ -2,6 +2,8 @@
 
 Make sure to edit your Smart Bridge IP in the lutron.js file.
 
+    let SMARTBRIDGE_IP = '10.0.1.102' //make this your IP
+
 NPM Dependencies
 - SSH2
 - Bluebird
