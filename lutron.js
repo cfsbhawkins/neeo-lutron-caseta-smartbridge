@@ -60,7 +60,7 @@ module.exports.sshConnect = function () {
       host: SMARTBRIDGE_IP,
       port: 22,
       username: SSH_USER,
-      privateKey: require('fs').readFileSync('./smartbridge/key/rsa_key')
+      privateKey: require('fs').readFileSync('./key/rsa_key')
     });
 };
 

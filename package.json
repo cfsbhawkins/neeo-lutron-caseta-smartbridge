@@ -1,0 +1,25 @@
+{
+  "name": "neeo-lutron-caseta-smartbridge",
+  "version": "0.0.4",
+  "description": "Lutron Caseta Smartbridge driver for NEEO Thining Remote",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/cfsbhawkins/neeo-lutron-caseta-smartbridge.git"
+  },
+  "author": "Brian Hawkins",
+  "license": "MIT",
+  "dependencies": {
+        "ssh2": "*",
+        "bluebird": "*",
+        "util": "*",
+        "split": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/cfsbhawkins/neeo-lutron-caseta-smartbridge/issues"
+  },
+  "homepage": "https://github.com/cfsbhawkins/neeo-lutron-caseta-smartbridge"
+}
