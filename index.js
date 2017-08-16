@@ -31,7 +31,7 @@ const casetaDeviceDiscovery = neeoapi.buildDevice('Caseta SmartBridge Devices')
   { setter: controller.sliderSet, getter: controller.sliderGet })
 
   .enableDiscovery(discoveryInstructions, controller.discoverDevices)
-  .registerSubscriptionFunction(controller.registerControllerStateUpdateCallback);
+  .registerSubscriptionFunction(controller.registerStateUpdateCallback);
 
 function startLutronCaseta(brain) {
   console.log('- Start Lutron Server');
