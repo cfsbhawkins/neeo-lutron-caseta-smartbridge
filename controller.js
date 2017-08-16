@@ -4,7 +4,7 @@ const BluePromise = require('bluebird');
 const lutron = require('./lutron');
 
 module.exports.startSSH = function () {
-  lutron.sshConnect();
+  lutron.sshConnect;
 };
 
 /*
