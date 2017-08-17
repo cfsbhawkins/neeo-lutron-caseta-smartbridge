@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
         "bonjour": "^3.5.0",
-        "neeo-sdk": "*",
+        "neeo-sdk": "^0.43.7",
         "ssh2": "*",
         "bluebird": "*",
         "util": "*",
