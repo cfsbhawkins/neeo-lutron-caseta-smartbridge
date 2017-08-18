@@ -12,7 +12,7 @@ module.exports.startSSH = function () {
  * Events on that device from the Brain will be forwarded here for handling.
  */
 
-module.exports.button = function (deviceid, name) {
+module.exports.button = function (name, deviceid) {
   lutron.setScene(deviceid);
 };
 
