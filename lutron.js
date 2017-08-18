@@ -4,14 +4,14 @@ const util = require('util');
 const SSHClient = require('ssh2').Client;
 const BluePromise = require('bluebird');
 const split = require('split');
+const discover = require('./discover');
 
 //app constants
 const SSH_USER = 'leap';
 const OFF = 0;
 const ON = 100;
 
-//todo autodisover, for now enter the ip of your SmartBridge or SmartBridge Pro
-let SMARTBRIDGE_IP = '10.0.1.102'
+let SMARTBRIDGE_IP = '';
 
 //JSON command files
 const getDeviceJson = require('./json/get_devices.json');
@@ -30,7 +30,10 @@ let commandExecuting = false;
 /*
 * SSH Connection, this is called after neeo brain has been connected
 */
-module.exports.sshConnect = function () {
+module.exports.sshConnect = discover.discoverOneBridge().then((bridge) => {
+  console.log('[Lutron] Bridge Found Name: ' + bridge.name);
+  console.log('[Lutron] Bridge Found IP: ' + bridge.iparray[0]);
+  SMARTBRIDGE_IP = bridge.iparray[0];
   console.log('[Lutron] Start SSH Client');
   let sshConn = new SSHClient();
   sshConn.on('ready', function () {
@@ -62,7 +65,7 @@ module.exports.sshConnect = function () {
       username: SSH_USER,
       privateKey: require('fs').readFileSync('./key/rsa_key')
     });
-};
+});
 
 /*
 * Action callbacks for Neeo Events from Scenes or Devices
@@ -78,6 +81,7 @@ module.exports.getScenesAndDevices = function () {
       return devicesAndScenes;
     });
 };
+
 
 module.exports.setSwitch = function (deviceid, value) {
   let currentValue = false;

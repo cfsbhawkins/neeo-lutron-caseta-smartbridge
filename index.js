@@ -8,7 +8,7 @@ console.log('------------------------------------------');
 
 const discoveryInstructions = {
   headerText: 'Lutron Caseta SmartBridge SSH Integration',
-  description: 'This code will execute commands to the IP address that is set in the lutron.js file, make sure to update this to reflect your network'
+  description: 'This code will execute commands to the SmartBridge on your local network directly.'
 };
 
 const casetaSceneDiscovery = neeoapi.buildDevice('Caseta SmartBridge Scenes')
@@ -31,7 +31,7 @@ const casetaDeviceDiscovery = neeoapi.buildDevice('Caseta SmartBridge Devices')
   { setter: controller.sliderSet, getter: controller.sliderGet })
 
   .enableDiscovery(discoveryInstructions, controller.discoverDevices)
-  .registerSubscriptionFunction(controller.registerControllerStateUpdateCallback);
+  .registerSubscriptionFunction(controller.registerStateUpdateCallback);
 
 function startLutronCaseta(brain) {
   console.log('- Start Lutron Server');

@@ -4,7 +4,7 @@ const BluePromise = require('bluebird');
 const lutron = require('./lutron');
 
 module.exports.startSSH = function () {
-  lutron.sshConnect();
+  lutron.sshConnect;
 };
 
 /*
@@ -12,7 +12,7 @@ module.exports.startSSH = function () {
  * Events on that device from the Brain will be forwarded here for handling.
  */
 
-module.exports.button = function (buttonName, deviceid) {
+module.exports.button = function (name, deviceid) {
   lutron.setScene(deviceid);
 };
 
@@ -49,6 +49,6 @@ module.exports.discoverDevices = function () {
     }));
 };
 
-module.exports.registerControllerStateUpdateCallback = function (updateFunction) {
+module.exports.registerStateUpdateCallback = function (updateFunction) {
   lutron.registerLutronStateUpdateCallback(updateFunction);
 };
