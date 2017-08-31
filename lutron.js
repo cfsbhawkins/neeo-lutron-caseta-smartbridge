@@ -163,13 +163,15 @@ function parseSSHData(data) {
         //realtime response
         parseEvent(json);
       } else {
-        console.log('[Lutron] Unknown Body Type: ' + json.Header.MessageBodyType);
+        //uncomment for debug
+        //console.log('[Lutron] Unknown Body Type: ' + json.Header.MessageBodyType);
       }
     } else {
       console.log('[Lutron] Header Error: ' + json.Header.StatusCode);
     }
   } else {
-    console.log('[Lutron] Not Read Response: ' + json.CommuniqueType);
+    //uncomment for debug
+    //console.log('[Lutron] Not Read Response: ' + json.CommuniqueType);
   }
 }
 
