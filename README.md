@@ -29,4 +29,6 @@ https://github.com/njschwartz/Lutron-Smart-Pi
 For the starting point to this application, without the SSH key we would never had had access to the SmartBridge, since its a closed system.
 
 ## Help Wanted
-Looking for help on Lamp Dimmer, I do not own one so not sure what it shows up as in the devices call.
+Looking for help on Lamp Dimmer, I do not own one so not sure what it shows up as in the devices call. 
+
+Currently looking into the latest update, it seems the SSH key might have changed.
