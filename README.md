@@ -1,3 +1,5 @@
+According to recent documentation, Lutron changed the LEAP SSH key, and locked us out. I'm researching the alterntive methods that have been disovered and will update the project shortly. In the mean time voice your opinion to Lutron and tell them to support third party developers and allow an offical integration.
+
 # Lutron Caseta Integration for NEEO Thinking Remote
 
 [![npm version](https://badge.fury.io/js/neeo-driver-lutron-caseta-smartbridge.svg)](https://badge.fury.io/js/neeo-driver-lutron-caseta-smartbridge)
@@ -30,5 +32,3 @@ For the starting point to this application, without the SSH key we would never h
 
 ## Help Wanted
 Looking for help on Lamp Dimmer, I do not own one so not sure what it shows up as in the devices call. 
-
-Currently looking into the latest update, it seems the SSH key might have changed.
