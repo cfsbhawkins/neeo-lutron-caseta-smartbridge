@@ -1,4 +1,4 @@
-According to recent documentation, Lutron changed the LEAP SSH key, and locked us out. I'm researching the alterntive methods that have been disovered and will update the project shortly. In the mean time voice your opinion to Lutron and tell them to support third party developers and allow an offical integration.
+According to recent documentation, Lutron changed the LEAP SSH key, and locked us out. I'm researching the alterntive methods that have been discovered and will update the project shortly. In the mean time voice your opinion to Lutron and tell them to support third party developers and allow an offical integration.
 
 # Lutron Caseta Integration for NEEO Thinking Remote
 
