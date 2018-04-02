@@ -1,3 +1,5 @@
+A new fix is coming soon that should allow this to work again. With the help of some other projects I have found out how to use the TLS Leap Server, it will not be as automatic as this one was. But will provide back the controls we used to have. You will need to run a script to generate an certificate from Lutron's servers. 
+
 According to recent documentation, Lutron changed the LEAP SSH key, and locked us out. I'm researching the alterntive methods that have been discovered and will update the project shortly. In the mean time voice your opinion to Lutron and tell them to support third party developers and allow an offical integration.
 
 # Lutron Caseta Integration for NEEO Thinking Remote
