@@ -1,6 +1,6 @@
 {
   "name": "neeo-driver-lutron-caseta-smartbridge",
-  "version": "1.0.1",
+  "version": "1.5.0",
   "description": "Lutron Caseta Smartbridge driver for NEEO Thining Remote",
   "main": "index.js",
   "keywords": [
